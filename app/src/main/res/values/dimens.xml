@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="teamTextSize">24sp</dimen>
+    <dimen name="scoreTextSize">70sp</dimen>
+
+    <dimen name="viewSeparatorHeight">1dp</dimen>
+
+    <dimen name="margin8Dp">8dp</dimen>
+    <dimen name="margin16Dp">16dp</dimen>
+    <dimen name="margin48Dp">48dp</dimen>
+</resources>

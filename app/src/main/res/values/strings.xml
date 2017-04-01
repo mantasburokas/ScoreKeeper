@@ -1,3 +1,15 @@
 <resources>
-    <string name="app_name">ScoreKeeper</string>
+    <string name="app_name">Football Statistics Tracker</string>
+
+    <string name="leftTeam">Left Team</string>
+    <string name="rightTeam">Right Team</string>
+
+    <string name="goals">Goals</string>
+    <string name="fouls">Fouls</string>
+
+    <string name="initial_score">0</string>
+
+    <string name="plus_one_goal">+1 Goal</string>
+    <string name="plus_one_foul">+1 Foul</string>
+    <string name="reset_score">Reset</string>
 </resources>

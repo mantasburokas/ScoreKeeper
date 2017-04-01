@@ -1,202 +1,208 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.keeper.score.scorekeeper.MainActivity">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:text="Left Team"
-        android:textAlignment="center"
-        android:textAllCaps="true"
-        android:textColor="#009688"
-        android:textSize="24sp" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="48dp"
-        android:layout_marginRight="48dp"
-        android:orientation="horizontal">
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin16Dp"
+            android:text="@string/leftTeam"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textColor="@color/teal"
+            android:textSize="@dimen/teamTextSize" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
+            android:layout_marginLeft="@dimen/margin48Dp"
+            android:layout_marginRight="@dimen/margin48Dp"
+            android:orientation="horizontal">
 
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Goals"
-                android:textAlignment="center"
-                android:textAllCaps="true"
-                android:textColor="@android:color/black" />
+                android:layout_weight="1"
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/goals_left_team"
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/goals"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/goals_left_team"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/initial_score"
+                    android:textAlignment="center"
+                    android:textColor="@color/teal"
+                    android:textSize="@dimen/scoreTextSize" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:onClick="addGoalLeftTeam"
+                    android:text="@string/plus_one_goal"
+                    android:textColor="@android:color/white" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="0"
-                android:textAlignment="center"
-                android:textColor="#009688"
-                android:textSize="70sp" />
+                android:layout_weight="1"
+                android:orientation="vertical">
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:backgroundTint="@color/colorPrimary"
-                android:onClick="addGoalLeftTeam"
-                android:text="+1 Goal"
-                android:textColor="@android:color/white" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fouls"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/fouls_left_team"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/initial_score"
+                    android:textAlignment="center"
+                    android:textColor="@color/teal"
+                    android:textSize="@dimen/scoreTextSize" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:onClick="addFoulLeftTeam"
+                    android:text="@string/plus_one_foul"
+                    android:textColor="@color/scoreButtonsColor" />
+            </LinearLayout>
         </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/viewSeparatorHeight"
+            android:layout_margin="@dimen/margin16Dp"
+            android:background="@color/colorPrimaryDark" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin16Dp"
+            android:text="@string/rightTeam"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textColor="@color/orange"
+            android:textSize="@dimen/teamTextSize" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
+            android:layout_marginLeft="@dimen/margin48Dp"
+            android:layout_marginRight="@dimen/margin48Dp"
+            android:orientation="horizontal">
 
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Fouls"
-                android:textAlignment="center"
-                android:textAllCaps="true"
-                android:textColor="@android:color/black" />
+                android:layout_weight="1"
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/fouls_left_team"
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/goals"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/goals_right_team"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="addGoalRightTeam"
+                    android:text="@string/initial_score"
+                    android:textAlignment="center"
+                    android:textColor="@color/orange"
+                    android:textSize="@dimen/scoreTextSize" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:onClick="addGoalRightTeam"
+                    android:text="@string/plus_one_goal"
+                    android:textColor="@color/scoreButtonsColor" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="0"
-                android:textAlignment="center"
-                android:textColor="#009688"
-                android:textSize="70sp" />
+                android:layout_weight="1"
+                android:orientation="vertical">
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:backgroundTint="@color/colorPrimary"
-                android:onClick="addFoulLeftTeam"
-                android:text="+1 Foal"
-                android:textColor="@android:color/white" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fouls"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/fouls_right_team"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/initial_score"
+                    android:textAlignment="center"
+                    android:textColor="@color/orange"
+                    android:textSize="@dimen/scoreTextSize" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:onClick="addFoulRightTeam"
+                    android:text="@string/plus_one_foul"
+                    android:textColor="@color/scoreButtonsColor" />
+            </LinearLayout>
         </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/viewSeparatorHeight"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/margin8Dp"
+            android:layout_marginLeft="@dimen/margin16Dp"
+            android:layout_marginRight="@dimen/margin16Dp"
+            android:layout_marginTop="@dimen/margin16Dp"
+            android:background="@color/mixOrangeTeal" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:backgroundTint="@color/mixOrangeTeal"
+            android:onClick="reset"
+            android:text="@string/reset_score"
+            android:textColor="@color/scoreButtonsColor" />
     </LinearLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_margin="16dp"
-        android:background="@color/colorPrimaryDark" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:text="Right Team"
-        android:textAlignment="center"
-        android:textAllCaps="true"
-        android:textColor="#ff9800"
-        android:textSize="24sp" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="48dp"
-        android:layout_marginRight="48dp"
-        android:orientation="horizontal">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Goals"
-                android:textAlignment="center"
-                android:textAllCaps="true"
-                android:textColor="@android:color/black" />
-
-            <TextView
-                android:id="@+id/goals_right_team"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="addGoalRightTeam"
-                android:text="0"
-                android:textAlignment="center"
-                android:textColor="#ff9800"
-                android:textSize="70sp" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:backgroundTint="@color/colorPrimary"
-                android:onClick="addGoalRightTeam"
-                android:text="+1 Goal"
-                android:textColor="@android:color/white" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Fouls"
-                android:textAlignment="center"
-                android:textAllCaps="true"
-                android:textColor="@android:color/black" />
-
-            <TextView
-                android:id="@+id/fouls_right_team"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="0"
-                android:textAlignment="center"
-                android:textColor="#ff9800"
-                android:textSize="70sp" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:backgroundTint="@color/colorPrimary"
-                android:onClick="addFoulRightTeam"
-                android:text="+1 Foal"
-                android:textColor="@android:color/white" />
-        </LinearLayout>
-    </LinearLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_gravity="center"
-        android:layout_marginBottom="8dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="16dp"
-        android:background="#809744" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:backgroundTint="#809744"
-        android:onClick="reset"
-        android:text="Reset"
-        android:textColor="@android:color/white" />
-</LinearLayout>
+</ScrollView>

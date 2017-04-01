@@ -139,6 +139,7 @@
                     android:id="@+id/goals_right_team"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:freezesText="true"
                     android:onClick="addGoalRightTeam"
                     android:text="@string/initial_score"
                     android:textAlignment="center"

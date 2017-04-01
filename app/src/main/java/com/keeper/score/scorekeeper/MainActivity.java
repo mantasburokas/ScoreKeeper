@@ -20,27 +20,25 @@ public class MainActivity extends AppCompatActivity {
     }
 
     protected void addGoalLeftTeam(View view) {
-        TextView textView = (TextView) findViewById(R.id.goals_left_team);
-
-        textView.setText(++goalsLeftTeam + "");
+        changeScoreTextView(R.id.goals_left_team, ++goalsLeftTeam);
     }
 
     protected void addFoulLeftTeam(View view) {
-        TextView textView = (TextView) findViewById(R.id.fouls_left_team);
-
-        textView.setText(++foulsLeftTeam + "");
+        changeScoreTextView(R.id.fouls_left_team, ++foulsLeftTeam);
     }
 
     protected void addGoalRightTeam(View view) {
-        TextView textView = (TextView) findViewById(R.id.goals_right_team);
-
-        textView.setText(++goalsRightTeam + "");
+        changeScoreTextView(R.id.goals_right_team, ++goalsRightTeam);
     }
 
     protected void addFoulRightTeam(View view) {
-        TextView textView = (TextView) findViewById(R.id.fouls_right_team);
+        changeScoreTextView(R.id.fouls_right_team, ++foulsRightTeam);
+    }
 
-        textView.setText(++foulsRightTeam + "");
+    protected void changeScoreTextView(int id, int metric) {
+        TextView textView = (TextView) findViewById(id);
+
+        textView.setText(String.valueOf(metric));
     }
 
     protected void reset(View view) {
@@ -50,15 +48,15 @@ public class MainActivity extends AppCompatActivity {
         goalsRightTeam = 0;
         foulsRightTeam = 0;
 
-        resetById(R.id.goals_left_team);
-        resetById(R.id.fouls_left_team);
-        resetById(R.id.goals_right_team);
-        resetById(R.id.fouls_right_team);
+        changeScoreTextView(R.id.goals_left_team);
+        changeScoreTextView(R.id.fouls_left_team);
+        changeScoreTextView(R.id.goals_right_team);
+        changeScoreTextView(R.id.fouls_right_team);
     }
 
-    protected void resetById(int id) {
+    protected void changeScoreTextView(int id) {
         TextView textView = (TextView) findViewById(id);
 
-        textView.setText(0 + "");
+        textView.setText(String.valueOf(0));
     }
 }
